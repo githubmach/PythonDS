@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 #!pip3 install pandas dash
 #!pip3 install wget
@@ -80,7 +75,8 @@ def get_pie_chart(entered_site):
         launchsite_name = {'site1':'CCAFS LC-40', 'site2':'CCAFS SLC-40', 
                            'site3':'KSC LC-39A', 'site4':'VAFB SLC-4E'}
         filtered_df = spacex_df[spacex_df['Launch Site']==launchsite_name[entered_site]]
-        fig = px.pie(filtered_df, names='class',  
+        values = filtered_df['class'].apply(lambda x: 1)
+        fig = px.pie(filtered_df, values=values, names='class',  
         title='Total Success Launches for site %str' %launchsite_name[entered_site])
         return fig
         
@@ -113,4 +109,3 @@ def get_scatter_chart(entered_site, entered_payload):
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
