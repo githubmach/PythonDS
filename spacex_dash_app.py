@@ -102,10 +102,9 @@ def get_scatter_chart(entered_site, entered_payload):
                       apply(lambda x: x>entered_payload[0] and x<entered_payload[1] )]
         fig = px.scatter(filtered_df, x='Payload Mass (kg)', y='class',
                          color='Booster Version',  
-        title='Correlation between Payload and Success for site %str' %launchsite_name[entered_site])
+        title='Correlation between Payload and Success for site %s' %launchsite_name[entered_site])
         return fig
 
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-    
