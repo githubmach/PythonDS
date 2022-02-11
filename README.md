@@ -1,3 +1,4 @@
 # PythonDS
-Python for Data Science
-It is a markdown file in the repository.
+This is a repository for SpaceX Space Race project capstone for IBM Data Science with Python
+All notebooks and python files are in the master branch
+
